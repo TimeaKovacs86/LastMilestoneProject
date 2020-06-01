@@ -1,0 +1,1 @@
+web: gunicorn LastMilestoneProject.wsgi.application
