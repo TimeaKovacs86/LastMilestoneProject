@@ -1,1 +1,1 @@
-web: gunicorn LastMilestoneProject.wsgi.application
+web: gunicorn LastMilestoneProject.wsgi:application
