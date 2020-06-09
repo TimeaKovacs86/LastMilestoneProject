@@ -1,3 +1,18 @@
 {% extends "base.html" %}
+{% load materializecss %}
+{% block page_title %} {{ user_form.username }}'s Profile {% endblock %}
 
-{% block page_title %} Profile {% endblock %}
+{% block content %}
+    <p>Username:</p>
+    {{ user_form.username }}
+       <p>First Name:</p>
+    {{ user_form.first_name }}
+      <p>Last Name:</p>
+    {{ user_form.last_name }}
+     <p>E-mail:</p>
+    {{ user_form.email }}
+    <p>Registration date:</p>
+    {{ user_form.date_joined }}
+    <p>Last login:</p>
+    {{ user_form.last_login }}
+{% endblock %}

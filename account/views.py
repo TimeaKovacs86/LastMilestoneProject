@@ -57,5 +57,7 @@ def registration(request):
     return render(request, "registration.html", {"registration_form": registration_form})
 
 
-def nav_profile(request):
-    return render(request, "profile.html")
+@login_required()
+def profile(request):
+    user_form = request.user
+    return render(request, "profile.html", {"user_form": user_form})
