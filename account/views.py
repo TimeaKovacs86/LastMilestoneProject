@@ -1,7 +1,7 @@
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, reverse
-from account.forms import UserLoginForm
+from account.forms import UserLoginForm, UserRegistrationForm
 
 
 # Create your views here.
@@ -33,12 +33,28 @@ def nav_login(request):
     return render(request, "login.html", {"login_form": login_form})
 
 
-# def nav_login(request):
-#     return render(request, "login.html")
+def registration(request):
+    if request.user.is_authenticated:
+        return redirect(reverse("profile"))
 
+    if request.method == "POST":
+        registration_form = UserRegistrationForm(request.POST)
 
-def nav_registration(request):
-    return render(request, "registration.html")
+        if registration_form.is_valid():
+            registration_form.save()
+
+            user = auth.authenticate(username=request.POST['username'],
+                                     password=request.POST['password1'])
+            if user:
+                auth.login(user=user, request=request)
+                messages.success(request, "You have successfully registered")
+                return redirect(reverse("profile"))
+            else:
+                messages.error(request, "Unable to register your account at this time")
+    else:
+        registration_form = UserRegistrationForm()
+
+    return render(request, "registration.html", {"registration_form": registration_form})
 
 
 def nav_profile(request):
