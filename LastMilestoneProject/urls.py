@@ -18,11 +18,13 @@ from django.conf.urls import url, include
 from home import urls as home_urls
 from account import urls as account_urls
 from feed import urls as feed_urls
+from products import urls as urls_product
 
 urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^', include(home_urls), name='index'),
     url('account/', include(account_urls)),
     url(r'^feed/', include(feed_urls)),
+    url(r'^products/', include(urls_product)),
 
 ]
