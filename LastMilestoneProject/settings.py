@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'materializecssform',
     'account',
     'home',
+    'feed',
 
 ]
 

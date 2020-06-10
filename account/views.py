@@ -15,7 +15,7 @@ def logout(request):
 
 def nav_login(request):
     if request.user.is_authenticated:
-        return redirect(reverse('profile'))
+        return redirect(reverse('feed'))
     if request.method == "POST":
         login_form = UserLoginForm(request.POST)
         if login_form.is_valid():
@@ -25,7 +25,7 @@ def nav_login(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully logged in!")
-                return redirect(reverse('profile'))
+                return redirect(reverse('feed'))
             else:
                 login_form.add_error(None, "Your username or password is incorrect")
     else:
@@ -35,7 +35,7 @@ def nav_login(request):
 
 def registration(request):
     if request.user.is_authenticated:
-        return redirect(reverse("profile"))
+        return redirect(reverse("feed"))
 
     if request.method == "POST":
         registration_form = UserRegistrationForm(request.POST)
@@ -48,7 +48,7 @@ def registration(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully registered")
-                return redirect(reverse("profile"))
+                return redirect(reverse("feed"))
             else:
                 messages.error(request, "Unable to register your account at this time")
     else:
