@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'feed',
     'products',
     'cart',
+    'search',
 
 ]
 

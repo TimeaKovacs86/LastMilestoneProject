@@ -20,6 +20,7 @@ from account import urls as account_urls
 from feed import urls as feed_urls
 from products import urls as urls_product
 from cart import urls as urls_cart
+from search import urls as search_urls
 
 urlpatterns = [
     url('admin/', admin.site.urls),
@@ -28,4 +29,5 @@ urlpatterns = [
     url(r'^feed/', include(feed_urls)),
     url(r'^products/', include(urls_product)),
     url(r'^cart/', include(urls_cart)),
+    url(r'^search/', include(search_urls)),
 ]
