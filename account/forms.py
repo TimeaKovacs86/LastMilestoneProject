@@ -1,11 +1,12 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 
 class UserLoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
+
 
 class UserRegistrationForm(UserCreationForm):
     first_name = forms.CharField(required=True)
@@ -42,3 +43,20 @@ class UserRegistrationForm(UserCreationForm):
         if password1 != password2:
             raise forms.ValidationError("Password must match")
         return password2
+
+
+class EditProfileForm(UserChangeForm):
+    first_name = forms.CharField(required=True)
+    last_name = forms.CharField(required=True)
+    email = forms.EmailField(required=True)
+    username = forms.CharField(required=True, min_length=5)
+
+    class Meta:
+        model = User
+        fields = (
+            'username',
+            'email',
+            'first_name',
+            'last_name',
+            'password'
+        )

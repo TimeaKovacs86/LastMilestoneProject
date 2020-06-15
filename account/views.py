@@ -1,7 +1,9 @@
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import update_session_auth_hash
 from django.shortcuts import render, redirect, reverse
-from account.forms import UserLoginForm, UserRegistrationForm
+from account.forms import UserLoginForm, UserRegistrationForm, EditProfileForm
+from django.contrib.auth.forms import PasswordChangeForm
 
 
 # Create your views here.
@@ -58,6 +60,40 @@ def registration(request):
 
 
 @login_required()
+def edit_profile(request):
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, instance=request.user)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, "User details has changed successfully!")
+            return redirect(reverse('profile'))
+    else:
+        form = EditProfileForm(instance=request.user)
+        args = {'form': form}
+        return render(request, 'edit.html', args)
+
+
+@login_required()
 def profile(request):
     user_form = request.user
     return render(request, "profile.html", {"user_form": user_form})
+
+
+@login_required()
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(data=request.POST, user=request.user)
+
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            messages.success(request, "Password has changed successfully!")
+            return redirect(reverse('profile'))
+        else:
+            messages.error(request, "There was something wrong with the given passwords!")
+            return redirect('change_password')
+    else:
+        form = PasswordChangeForm(user=request.user)
+        args = {'form': form}
+        return render(request, 'change-password.html', args)
