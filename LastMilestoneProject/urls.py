@@ -21,6 +21,7 @@ from feed import urls as feed_urls
 from products import urls as urls_product
 from cart import urls as urls_cart
 from search import urls as search_urls
+from checkout import urls as urls_checkout
 
 urlpatterns = [
     url('admin/', admin.site.urls),
@@ -30,4 +31,5 @@ urlpatterns = [
     url(r'^products/', include(urls_product)),
     url(r'^cart/', include(urls_cart)),
     url(r'^search/', include(search_urls)),
+    url(r'^checkout/', include(urls_checkout)),
 ]
