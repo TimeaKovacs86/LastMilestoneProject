@@ -10,4 +10,9 @@
         {{ login_form|materializecss }}
         <input class="btn" type="submit" value="Log In"/>
     </form>
+    <div>
+        <a href="{% url 'password_reset' %}">
+            <button class="btn btn-info"><i class="fa fa-unlock-alt"></i> Forget your password?</button>
+        </a>
+    </div>
 {% endblock %}

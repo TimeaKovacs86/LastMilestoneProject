@@ -3,14 +3,14 @@
 {% block page_title %} Feed page {% endblock %}
 
 {% block content %}
-    <h1 class="feed-header">News</h1>
+    <h1>News</h1>
     <!-- Feed content -->
     {% for feed_element in feed_elements %}
-        <p class="article-title">{{ feed_element.title }}</p>
-        <p class="article-created">{{ feed_element.created_at }}</p>
+        <p>{{ feed_element.title }}</p>
+        <p>{{ feed_element.created_at }}</p>
         {% if feed_element.images %}
-            <div class="article-image" style="background-image: url('{{ MEDIA_URL }}{{ feed_element.images }}')"></div>
+            <div style="background-image: url('{{ MEDIA_URL }}{{ feed_element.images }}')"></div>
         {% endif %}
-        <p class="article-description product-container">{{ feed_element.description }}</p>
+        <p>{{ feed_element.description }}</p>
     {% endfor %}
 {% endblock %}

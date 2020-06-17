@@ -4,58 +4,58 @@
 
 {% block content %}
     <!-- Edit user details -->
-    <div class="user-detail">
+    <div>
         <form method="POST">
             {% csrf_token %}
-            <div class="profile-container">
-                <div class="row margin-profile-field">
-                    <div class="col-sm-12">
-                        <p class="text-center">Username: </p>
+            <div>
+                <div>
+                    <div>
+                        <p>Username: </p>
                     </div>
                 </div>
-                <div class="row margin-profile-field">
-                    <div class="col-sm-12">
-                        <p class="text-center">{{ form.username }}</p>
+                <div>
+                    <div>
+                        <p>{{ form.username }}</p>
                     </div>
                 </div>
-                <div class="row margin-profile-field">
-                    <div class="col-sm-12">
-                        <p class="text-center">First name: </p>
+                <div>
+                    <div>
+                        <p>First name: </p>
                     </div>
                 </div>
-                <div class="row margin-profile-field">
-                    <div class="col-sm-12">
-                        <p class="text-center">{{ form.first_name }}</p>
+                <div>
+                    <div>
+                        <p>{{ form.first_name }}</p>
                     </div>
                 </div>
-                <div class="row margin-profile-field">
-                    <div class="col-sm-12">
-                        <p class="text-center">Last name: </p>
+                <div>
+                    <div>
+                        <p>Last name: </p>
                     </div>
                 </div>
-                <div class="row margin-profile-field">
-                    <div class="col-sm-12">
-                        <p class="text-center">{{ form.last_name }}</p>
+                <div>
+                    <div>
+                        <p>{{ form.last_name }}</p>
                     </div>
                 </div>
-                <div class="row margin-profile-field">
-                    <div class="col-sm-12">
-                        <p class="text-center">Last name: </p>
+                <div>
+                    <div>
+                        <p>Last name: </p>
                     </div>
                 </div>
-                <div class="row margin-profile-field">
-                    <div class="col-sm-12">
-                        <p class="text-center">{{ form.email }}</p>
+                <div>
+                    <div>
+                        <p>{{ form.email }}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-xs-12 edit-return-button">
+            <div>
                 <button type="submit" class="btn"><i class="fa fa-check"></i> Submit</button>
             </div>
         </form>
-        <div class="col-sm-12 col-xs-12 edit-return-button margin-bottom">
+        <div>
             <a href="{% url 'profile' %}">
-                <button class="btn btn-info"><i class="fa fa-arrow-left"></i> Return</button>
+                <button class="btn"><i class="fa fa-arrow-left"></i> Return</button>
             </a>
         </div>
     </div>
