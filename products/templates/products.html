@@ -3,7 +3,21 @@
 {% block page_title %} Products {% endblock %}
 
 {% block content %}
+    {% if is_empty is False %}
+        <p class="text-center info-empty">There is no matching result!</p>
+    {% endif %}
 
-<h3>Searched term: {{ is_empty }}</h3>
+    <div>
+        {% for product in products %}
+
+            <div>
+                <div
+                        style="background-image: url('{{ MEDIA_URL }}{{ product.images }}')"></div>
+                <p>{{ product.name }}</p>
+                <p>{{ product.snippet }}</p>
+                <p>{{ product.price }} {{ product.currency }}</p>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}
