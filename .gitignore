@@ -5,4 +5,4 @@ env.py
 # Ignore local Database
 *.sqlite3
 # Ignore local media files
-/media/images
+/media/images/*
