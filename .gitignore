@@ -4,3 +4,5 @@ env.py
 .idea
 # Ignore local Database
 *.sqlite3
+# Ignore local media files
+/media/images

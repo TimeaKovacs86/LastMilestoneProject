@@ -9,7 +9,8 @@
         <p>{{ feed_element.title }}</p>
         <p>{{ feed_element.created_at }}</p>
         {% if feed_element.images %}
-            <div style="background-image: url('{{ MEDIA_URL }}{{ feed_element.images }}')"></div>
+            <div style="background-image: url('{{ MEDIA_URL }}{{ feed_element.images }}');width: 200px; height: 200px;background-size: contain;
+    background-position: center center; background-repeat: no-repeat"></div>
         {% endif %}
         <p>{{ feed_element.description }}</p>
     {% endfor %}
