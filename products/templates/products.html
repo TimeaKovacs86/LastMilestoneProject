@@ -4,21 +4,23 @@
 
 {% block content %}
     {% if is_empty is False %}
-        <p class="text-center info-empty">There is no matching result!</p>
+        <p>There is no matching result!</p>
     {% endif %}
 
     <div>
         {% for product in products %}
-
             <div>
-                <div
-                        style="background-image: url('{{ MEDIA_URL }}{{ product.images }}'); width: 200px; height: 200px;background-size: contain;
-    background-position: center center; background-repeat: no-repeat"></div>
-                <p>{{ product.name }}</p>
+                <a href="{% url "view_product_detail" slug=product.slug %}">
+                    <div
+                         style="background-image: url('{{ MEDIA_URL }}{{ product.images }}'); width: 200px; height: 200px;background-size: contain;
+                                background-position: center center; background-repeat: no-repeat"></div>
+                    <p>{{ product.name }}</p>
+                </a>
                 <p>{{ product.snippet }}</p>
                 <p>{{ product.price }} {{ product.currency }}</p>
             </div>
         {% endfor %}
     </div>
+
 
 {% endblock %}

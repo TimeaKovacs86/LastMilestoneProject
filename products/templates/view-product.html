@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% load materializecss %}
+
+{% block page_title %} {{ product.name }} {% endblock %}
+
+{% block content %}
+    <!-- Product detail section -->
+        <div>
+            <div
+                 style="background-image: url('{{ MEDIA_URL }}{{ product.images }}'); width: 200px; height: 200px;background-size: contain;
+    background-position: center center; background-repeat: no-repeat"></div>
+            <p>{{ product.name }}</p>
+            <p>{{ product.description_section }}</p>
+            <p>{{ product.price }} {{ product.currency }}</p>
+        </div>
+    <!-- Review container section -->
+        <div>
+            <div>
+                {% for review in reviews %}
+                    <div>
+                        <p>{{ review.author }} | {{ review.created_date }}</p>
+                        <p>{{ review.review }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    <!-- Add review container section -->
+        {% if user.is_authenticated %}
+            <div>
+                <div>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div>
+                            <div>
+                                {{ review_form | materializecss }}
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <button type="submit" class="btn"><i class="fa fa-comment"></i> Add Review
+                                </button>
+                            </div>
+                        </div>
+                        <p>Please keep in mind that
+                            you can not change your review!!!</p>
+                    </form>
+                </div>
+            </div>
+        {% else %}
+            <h3>To write review, please
+                <a href="{% url 'login' %}"> >>log in<< </a>
+            </h3>
+        {% endif %}
+{% endblock %}
