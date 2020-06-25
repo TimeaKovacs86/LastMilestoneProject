@@ -6,6 +6,7 @@ from django.contrib import messages
 def view_cart(request):
     return render(request, "cart.html")
 
+
 def add_to_cart(request, id):
     if request.POST.get('quantity') == "":
         messages.info(request, "The input field is empty!")
@@ -23,6 +24,7 @@ def add_to_cart(request, id):
     request.session['cart'] = cart
     return redirect(reverse('products'))
 
+
 def adjust_cart(request, id):
     if request.POST.get('quantity') == "":
         messages.add_message(request, messages.INFO, "We can't modify empty input!")
@@ -38,4 +40,12 @@ def adjust_cart(request, id):
         return redirect(reverse('view_cart'))
 
     request.session['cart'] = cart
+    return redirect(reverse('view_cart'))
+
+
+def delete_cart(request, id):
+    cart = request.session.get('cart', {})
+    cart.pop(id)
+    request.session['cart'] = cart
+    messages.info(request, "Item has been deleted!")
     return redirect(reverse('view_cart'))

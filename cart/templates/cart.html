@@ -10,8 +10,17 @@
         {% for item in cart_items %}
             <div>
                 <div>
+                    <div>
+                        <form method="POST" action="{% url "delete_cart" item.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </form>
+                    </div>
                     <div
-                            style="background-image: url('{{ MEDIA_URL }}{{ item.product.images }}'); width: 200px; height: 200px;background-size: contain;
+                            style="background-image: url('
+                                    {{ MEDIA_URL }}{{ item.product.images }}'); width: 200px; height: 200px;background-size: contain;
                                     background-position: center center; background-repeat: no-repeat"></div>
                     <div>
                         <a href="{% url "view_product_detail" slug=item.product.slug %}">
