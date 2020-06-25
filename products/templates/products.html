@@ -12,13 +12,24 @@
             <div>
                 <a href="{% url "view_product_detail" slug=product.slug %}">
                     <div
-                         style="background-image: url('{{ MEDIA_URL }}{{ product.images }}'); width: 200px; height: 200px;background-size: contain;
-                                background-position: center center; background-repeat: no-repeat"></div>
+                            style="background-image: url('{{ MEDIA_URL }}{{ product.images }}'); width: 200px; height: 200px;background-size: contain;
+                                    background-position: center center; background-repeat: no-repeat"></div>
                     <p>{{ product.name }}</p>
                 </a>
                 <p>{{ product.snippet }}</p>
                 <p>{{ product.price }} {{ product.currency }}</p>
             </div>
+            <!-- Add to cart -->
+            <form method="post" action="{% url 'add_to_cart' product.id %}">
+                {% csrf_token %}
+                <div>
+                    <input name="quantity" type="number" min="1" max="999"
+                           placeholder="Quantity" aria-label="quantity" required>
+                    <span>
+                            <button class="btn" type="submit"><i class="fa fa-plus"></i> Add</button>
+                        </span>
+                </div>
+            </form>
         {% endfor %}
     </div>
 

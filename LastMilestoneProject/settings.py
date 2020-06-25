@@ -78,6 +78,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # For images
                 'django.template.context_processors.media',
+                'cart.contexts.cart_contents',
             ],
         },
     },
