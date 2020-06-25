@@ -1,3 +1,48 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-{% block page_title %} Cart page {% endblock %}
+{% block page_title %} Cart {% endblock %}
+<!-- Cart content -->
+{% block content %}
+    <div>
+        {% if cart_not_empty is False %}
+            <p>Your cart is empty!</p>
+        {% endif %}
+        {% for item in cart_items %}
+            <div>
+                <div>
+                    <div
+                            style="background-image: url('{{ MEDIA_URL }}{{ item.product.images }}'); width: 200px; height: 200px;background-size: contain;
+                                    background-position: center center; background-repeat: no-repeat"></div>
+                    <div>
+                        <a href="{% url "view_product_detail" slug=item.product.slug %}">
+                            <p>{{ item.product.name }}</p>
+                        </a>
+                        <p>{{ item.product.snippet }}</p>
+                        <p>{{ item.product.price }} {{ item.product.currency }}</p>
+                        <form method="POST" action="{% url 'adjust_cart' item.id %}">
+                            {% csrf_token %}
+                            <div>
+                                <label for="exampleInputAmount" class="sr-only">New Qty</label>
+                                <div>
+                                    <div>Quantity</div>
+                                    <div>
+                                        <input name="quantity" type="number" min="1" max="999"
+                                               aria-label="quantity" required>
+                                    </div>
+                                    <div>{{ item.quantity }}</div>
+                                    <div>
+                                        <button type="submit" class="btn"><span
+
+                                                aria-hidden="true"></span> Amend
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

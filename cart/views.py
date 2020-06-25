@@ -22,3 +22,20 @@ def add_to_cart(request, id):
         messages.info(request, "Item has given to the cart!")
     request.session['cart'] = cart
     return redirect(reverse('products'))
+
+def adjust_cart(request, id):
+    if request.POST.get('quantity') == "":
+        messages.add_message(request, messages.INFO, "We can't modify empty input!")
+        return redirect(reverse('view_cart'))
+    else:
+        quantity = int(request.POST.get('quantity'))
+        cart = request.session.get('cart', {})
+
+    if quantity > 0:
+        messages.info(request, "You modified the number of the items!")
+        cart[id] = quantity
+    else:
+        return redirect(reverse('view_cart'))
+
+    request.session['cart'] = cart
+    return redirect(reverse('view_cart'))
