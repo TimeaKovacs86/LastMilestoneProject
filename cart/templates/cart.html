@@ -53,9 +53,15 @@
             </div>
         {% endfor %}
     </div>
-    <a href="{% url "checkout" %}">
-        <button class="btn">Checkout
-        </button>
-    </a>
+        <!-- Checkout section -->
+    {% if cart_not_empty is True %}
+        <div>
+            <p>Total</p>
+            <p>{{ total }} €</p>
+            <a href="{% url 'checkout' %}">
+                <button class="btn"><i class="fa fa-check"></i> Checkout</button>
+            </a>
+        </div>
+    {% endif %}
 
 {% endblock %}

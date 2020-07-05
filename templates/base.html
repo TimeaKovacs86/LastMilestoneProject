@@ -67,6 +67,16 @@
         </ul>
     </div>
 </nav>
+<!-- Messages -->
+<div id="message_container">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert-message">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
 <ul class="sidenav" id="mobile-demo">
     {% if user.is_authenticated %}
         <li>
@@ -146,4 +156,8 @@
         $('.sidenav').sidenav();
     });
 </script>
+<!-- Import Materialize toast message -->
+<script>
+    var toastElement = document.querySelector('.alert-message');
+    M.toast({html: toastElement, classes: 'rounded'});</script>
 </html>
