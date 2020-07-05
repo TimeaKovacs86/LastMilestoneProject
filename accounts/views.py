@@ -2,7 +2,7 @@ from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import update_session_auth_hash
 from django.shortcuts import render, redirect, reverse
-from account.forms import UserLoginForm, UserRegistrationForm, EditProfileForm
+from accounts.forms import UserLoginForm, UserRegistrationForm, EditProfileForm
 from django.contrib.auth.forms import PasswordChangeForm
 
 
@@ -52,7 +52,7 @@ def registration(request):
                 messages.success(request, "You have successfully registered")
                 return redirect(reverse("feed"))
             else:
-                messages.error(request, "Unable to register your account at this time")
+                messages.error(request, "Unable to register your accounts at this time")
     else:
         registration_form = UserRegistrationForm()
 

@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'materialize',
     'materializecssform',
-    'account',
+    'accounts',
     'home',
     'feed',
     'products',
@@ -168,7 +168,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # Login with username or e-mail address
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'account.backends.CaseInsensitiveAuth'
+    'accounts.backends.CaseInsensitiveAuth'
 ]
 
 # Messages

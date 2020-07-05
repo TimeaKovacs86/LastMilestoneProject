@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
 from .views import nav_login, registration, profile, logout, edit_profile, change_password
-from account import url_reset
+from accounts import url_reset
 
 urlpatterns = [
     url(r'^login/$', nav_login, name='login'),

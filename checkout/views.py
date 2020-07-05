@@ -2,11 +2,9 @@ import stripe as stripe
 import os
 
 from django.contrib import messages
-from django.shortcuts import render, get_object_or_404
-from urllib import request
 from .models import OrderLineItem
 from products.models import Product
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 
 # Set your secret key. Remember to switch to your live secret key in production!
@@ -21,6 +19,7 @@ stripe.api_key = os.environ.get('STRIPE_SECRET_KEY')
 # Create your views here.
 @login_required()
 def checkout(request):
+
     if request.method == "POST":
         token = request.POST['stripeToken']
 
