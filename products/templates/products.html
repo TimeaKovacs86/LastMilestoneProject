@@ -11,9 +11,8 @@
         {% for product in products %}
             <div>
                 <a href="{% url "view_product_detail" slug=product.slug %}">
-                    <div
-                            style="background-image: url('{{ MEDIA_URL }}{{ product.images }}'); width: 200px; height: 200px;background-size: contain;
-                                    background-position: center center; background-repeat: no-repeat"></div>
+                    <div class="images"
+                            style="background-image: url('{{ MEDIA_URL }}{{ product.images }}')"></div>
                     <p>{{ product.name }}</p>
                 </a>
                 <p>{{ product.snippet }}</p>

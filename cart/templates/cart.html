@@ -18,10 +18,8 @@
                             </button>
                         </form>
                     </div>
-                    <div
-                            style="background-image: url('
-                                    {{ MEDIA_URL }}{{ item.product.images }}'); width: 200px; height: 200px;background-size: contain;
-                                    background-position: center center; background-repeat: no-repeat"></div>
+                    <div class="images"
+                            style="background-image: url('{{ MEDIA_URL }}{{ item.product.images }}')"></div>
                     <div>
                         <a href="{% url "view_product_detail" slug=item.product.slug %}">
                             <p>{{ item.product.name }}</p>
