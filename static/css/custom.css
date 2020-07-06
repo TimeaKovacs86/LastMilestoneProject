@@ -1,15 +1,43 @@
 
-  body {
+body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-  }
+}
 
-  main {
+main {
     flex: 1 0 auto;
-  }
+}
 
-  #message_container {
+.page-footer {
+    padding-top: 0;
+}
+
+.row {
+    margin-bottom: 0;
+}
+
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+.list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.fa {
+    transition: all 0.5s ease-in-out;
+}
+
+.fa:hover {
+    color: #6b7c93;
+    transition: all 0.5s ease-in-out;
+}
+
+#message_container {
     margin: 0 auto;
     text-align: center;
     width: 35%;
