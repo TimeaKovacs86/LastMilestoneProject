@@ -4,59 +4,52 @@
 
 {% block content %}
     <!-- Edit user details -->
-    <div>
-        <form method="POST">
-            {% csrf_token %}
-            <div>
-                <div>
-                    <div>
-                        <p>Username: </p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <p>{{ form.username }}</p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <p>First name: </p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <p>{{ form.first_name }}</p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <p>Last name: </p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <p>{{ form.last_name }}</p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <p>Last name: </p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <p>{{ form.email }}</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <button type="submit" class="btn"><i class="fa fa-check"></i> Submit</button>
-            </div>
-        </form>
+    <div class="container edit-profile">
         <div>
-            <a href="{% url 'profile' %}">
-                <button class="btn"><i class="fa fa-arrow-left"></i> Return</button>
-            </a>
+            <form method="POST">
+                {% csrf_token %}
+                <div>
+                    <div>
+                        <div>
+                            <p class="input-field">{{ form.username }}
+                                <label for="id_username">Username</label>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p class="input-field">{{ form.first_name }}
+                                <label for="id_first_name">First name</label>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p class="input-field">{{ form.last_name }}
+                                <label for="id_last_name">Last name</label>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p class="input-field">{{ form.email }}
+                                <label for="id_email">E-mail address</label>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 ">
+                        <a href="{% url 'profile' %}">
+                            <p class="btn return-btn"><i class="fa fa-arrow-left"></i> Return</p>
+                        </a>
+                    </div>
+                    <div class="col s6 ">
+                        <button type="submit" class="btn float-right-btn" ><i class="fa fa-check"></i> Submit</button>
+                    </div>
+
+                </div>
+            </form>
         </div>
     </div>
 {% endblock %}

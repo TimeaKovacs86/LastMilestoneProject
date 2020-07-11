@@ -13,6 +13,22 @@ main {
     margin-bottom: 0;
 }
 
+/*Edit and Change password styling*/
+.edit-profile, .change-password {
+    margin-top: 60px;
+}
+
+.float-right-btn {
+    float: right;
+}
+.return-btn {
+    margin: 0;
+}
+
+.information li {
+    list-style-type: circle !important;
+    list-style-position: inside;
+}
 
 /*Products page and View Products page styling*/
 .images {
@@ -73,7 +89,11 @@ main {
 }
 
 /*Footer*/
+
+
+
 .page-footer {
+    margin-top: 20px;
     padding-top: 0;
 }
 
