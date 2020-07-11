@@ -31,7 +31,7 @@ main {
 }
 
 /*Edit and Change password styling*/
-.edit-profile, .change-password {
+.edit-profile, .change-password, .registration {
     margin-top: 60px;
 }
 
