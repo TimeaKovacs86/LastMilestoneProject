@@ -3,25 +3,44 @@
 {% block page_title %} {{ user_form.username }}'s Profile {% endblock %}
 
 {% block content %}
-    <p>Username:</p>
-    {{ user_form.username }}
-    <p>First Name:</p>
-    {{ user_form.first_name }}
-    <p>Last Name:</p>
-    {{ user_form.last_name }}
-    <p>E-mail:</p>
-    {{ user_form.email }}
-    <p>Registration date:</p>
-    {{ user_form.date_joined }}
-    <p>Last login:</p>
-    {{ user_form.last_login }}
+    <div class="container">
+        <div class="row">
+            <div class="profile-info">
+                <div>
+                    <p>Username:</p>
+                    {{ user_form.username }}
+                </div>
+                <div class="col s6">
+                    <p>First Name:</p>
+                    {{ user_form.first_name }}
+                </div>
+                <div class="col s6">
+                    <p>Last Name:</p>
+                    {{ user_form.last_name }}
+                </div>
+                <div>
+                    <p>E-mail:</p>
+                    {{ user_form.email }}
+                </div>
+                <div class="col s6">
+                    <p>Registration date:</p>
+                    {{ user_form.date_joined }}
+                </div>
+                <div class="col s6">
+                    <p>Last login:</p>
+                    {{ user_form.last_login }}
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <a href="{% url 'edit_profile' %}">
+                <button class="btn"><i class="fa fa-pencil"></i> Update Details</button>
+            </a>
 
-    <a href="{% url 'edit_profile' %}">
-        <button class="btn"><i class="fa fa-pencil"></i> Update Details</button>
-    </a>
+            <a href="{% url 'change_password' %}">
+                <button class="btn"><i class="fa fa-pencil"></i> Change Password</button>
+            </a>
+        </div>
 
-    <a href="{% url 'change_password' %}">
-        <button class="btn"><i class="fa fa-pencil"></i> Change Password</button>
-    </a>
-
+    </div>
 {% endblock %}

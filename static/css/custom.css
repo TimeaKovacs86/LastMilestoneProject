@@ -13,6 +13,23 @@ main {
     margin-bottom: 0;
 }
 
+.profile-info {
+    text-align: center;
+}
+
+.profile-info p {
+    font-weight: bold;
+}
+
+.button-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.button-container .btn {
+    margin-bottom: 20px;
+}
+
 /*Edit and Change password styling*/
 .edit-profile, .change-password {
     margin-top: 60px;
@@ -145,4 +162,9 @@ main {
     .product-image {
         height: 200px;
     }
+    .brand-logo {
+        font-size: 1.7rem !important;
+    }
+
 }
+
