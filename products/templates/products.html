@@ -6,31 +6,37 @@
     {% if is_empty is False %}
         <p>There is no matching result!</p>
     {% endif %}
-
-    <div>
-        {% for product in products %}
-            <div>
-                <a href="{% url "view_product_detail" slug=product.slug %}">
-                    <div class="images"
-                            style="background-image: url('{{ MEDIA_URL }}{{ product.images }}')"></div>
-                    <p>{{ product.name }}</p>
-                </a>
-                <p>{{ product.snippet }}</p>
-                <p>{{ product.price }} {{ product.currency }}</p>
-            </div>
-            <!-- Add to cart -->
-            <form method="post" action="{% url 'add_to_cart' product.id %}">
-                {% csrf_token %}
-                <div>
-                    <input name="quantity" type="number" min="1" max="999" value="1"
-                           aria-label="quantity" required>
-                    <span>
-                            <button class="btn" type="submit"><i class="fa fa-plus"></i> Add</button>
-                        </span>
+    <div class="container">
+        <div class="row">
+            {% for product in products %}
+                <div class="col s12 m6 xl4 ">
+                    <div class="products">
+                        <div>
+                            <a href="{% url "view_product_detail" slug=product.slug %}">
+                                <div class="images"
+                                     style="background-image: url('{{ MEDIA_URL }}{{ product.images }}')"></div>
+                                <p class="products-name">{{ product.name }}</p>
+                            </a>
+                            <p class="products-description">{{ product.snippet }}</p>
+                            <p class="products-price">{{ product.price }} {{ product.currency }}</p>
+                        </div>
+                        <!-- Add to cart -->
+                        <form method="post" action="{% url 'add_to_cart' product.id %}">
+                            {% csrf_token %}
+                            <div>
+                                <div class="quantity-container">
+                                    <input class="quantity-align" name="quantity" type="number" min="1" max="999" value="1"
+                                           aria-label="quantity" required >
+                                </div>
+                                <div class="btn-add">
+                                    <button class="btn" type="submit"><i class="fa fa-plus"></i> Add</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </form>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
-
 
 {% endblock %}
