@@ -12,6 +12,13 @@ main {
 .row {
     margin-bottom: 0;
 }
+/*Login page*/
+
+.login-page {
+    margin-top: 0;
+}
+
+/*Profile page*/
 
 .profile-info {
     text-align: center;
@@ -31,7 +38,7 @@ main {
 }
 
 /*Edit and Change password styling*/
-.edit-profile, .change-password, .registration {
+.edit-profile, .change-password, .registration, .login {
     margin-top: 60px;
 }
 
