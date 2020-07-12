@@ -6,3 +6,6 @@ env.py
 *.sqlite3
 # Ignore local media files
 /media/images/*
+# Html coverage
+/htmlcov
+.coverage
