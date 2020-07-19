@@ -1,4 +1,4 @@
-stripe==2.48.0
+stripe==2.37.2
 boto3==1.14.12
 django-storages==1.9.1
 Pillow==7.1.2
