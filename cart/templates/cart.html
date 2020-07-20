@@ -3,63 +3,70 @@
 {% block page_title %} Cart {% endblock %}
 <!-- Cart content -->
 {% block content %}
-    <div>
+    <div class="container">
         {% if cart_not_empty is False %}
             <p>Your cart is empty!</p>
         {% endif %}
-        {% for item in cart_items %}
-            <div>
-                <div>
-                    <div>
-                        <form method="POST" action="{% url "delete_cart" item.id %}">
-                            {% csrf_token %}
-                            <button type="submit" class="btn">
-                                <i class="fa fa-trash"></i>
-                            </button>
-                        </form>
-                    </div>
-                    <div class="images"
-                            style="background-image: url('{{ MEDIA_URL }}{{ item.product.images }}')"></div>
-                    <div>
-                        <a href="{% url "view_product_detail" slug=item.product.slug %}">
-                            <p>{{ item.product.name }}</p>
-                        </a>
-                        <p>{{ item.product.snippet }}</p>
-                        <p>{{ item.product.price }} {{ item.product.currency }}</p>
+
+        <div class="row">
+            {% for item in cart_items %}
+                <div class="col s12 m6 xl4 ">
+                    <div class="products">
+                        <div >
+                            <form class="text-right" method="POST" action="{% url "delete_cart" item.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <div>
+                            <a href="{% url "view_product_detail" slug=item.product.slug %}">
+                                <div class="images"
+                                     style="background-image: url('{{ MEDIA_URL }}{{ item.product.images }}')">
+                                </div>
+                                <p class="products-name">{{ item.product.name }}</p>
+                            </a>
+                            <p class="products-description">{{ item.product.snippet }}</p>
+                            <p class="products-price">{{ item.product.price }} {{ item.product.currency }}</p>
+                        </div>
                         <form method="POST" action="{% url 'adjust_cart' item.id %}">
                             {% csrf_token %}
                             <div>
                                 <label for="exampleInputAmount" class="sr-only">New Qty</label>
                                 <div>
-                                    <div>Quantity</div>
                                     <div>
                                         <input name="quantity" type="number" min="1" max="999"
                                                aria-label="quantity" required>
                                     </div>
-                                    <div>{{ item.quantity }}</div>
-                                    <div>
-                                        <button type="submit" class="btn"><span
+                                    <div class="row amend">
+                                        <p>Quantity: {{ item.quantity }}</p>
+                                        <div class="amend">
+                                            <button type="submit" class="btn"><span
 
-                                                aria-hidden="true"></span> Amend
-                                        </button>
+                                                    aria-hidden="true"></span> Amend
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
-    </div>
-        <!-- Checkout section -->
-    {% if cart_not_empty is True %}
-        <div>
-            <p>Total</p>
-            <p>{{ total }} €</p>
-            <a href="{% url 'checkout' %}">
-                <button class="btn"><i class="fa fa-check"></i> Checkout</button>
-            </a>
+            {% endfor %}
         </div>
-    {% endif %}
 
+        <!-- Checkout section -->
+        {% if cart_not_empty is True %}
+            <div class="row checkout">
+                <p>Total</p>
+                <p>{{ total }} €</p>
+                <div class="checkout">
+                    <a href="{% url 'checkout' %}">
+                        <button class="btn "><i class="fa fa-check"></i> Checkout</button>
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}

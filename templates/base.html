@@ -19,6 +19,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     {% block stripe_js %}
     {% endblock %}
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}">
     <title>
         {% block page_title %}
             Heit Horseradish
@@ -44,7 +46,7 @@
                 <li><a href="{% url "products" %}"><i class="fa fa-bars" aria-hidden="true"></i> Products</a></li>
                 <li><a href="{% url "view_cart" %}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
                     {% if product_count > 0 %}
-                        <label>{{ product_count }}</label>
+                        <label class="counter">{{ product_count }}</label>
                     {% endif %}</a></li>
                 <li><a href="{% url "logout" %}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
             {% else %}
@@ -91,7 +93,7 @@
         <li><a href="{% url "products" %}"><i class="fa fa-bars" aria-hidden="true"></i> Products</a></li>
         <li><a href="{% url "view_cart" %}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
             {% if product_count > 0 %}
-                <label>{{ product_count }}</label>
+                <label class="counter">{{ product_count }}</label>
             {% endif %}</a></li>
         <li><a href="{% url "logout" %}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
     {% else %}
