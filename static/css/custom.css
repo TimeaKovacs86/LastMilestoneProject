@@ -12,6 +12,23 @@ main {
 .row {
     margin-bottom: 0;
 }
+
+/*Home page*/
+
+.welcome h2 {
+    text-align: center;
+}
+
+.welcome p {
+    margin: 20px auto;
+    text-align: justify;
+    width: 70%;
+}
+
+.image-container {
+    text-align: center;
+}
+
 /*Login page*/
 
 .login-page {
