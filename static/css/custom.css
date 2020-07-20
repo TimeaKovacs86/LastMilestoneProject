@@ -29,6 +29,12 @@ main {
     text-align: center;
 }
 
+/*Feed page*/
+
+.welcome h1, h5{
+    text-align: center;
+}
+
 /*Login page*/
 
 .login-page {
