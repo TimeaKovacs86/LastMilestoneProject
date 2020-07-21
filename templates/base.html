@@ -14,6 +14,7 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <!-- Import jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -35,7 +36,7 @@
         <ul class="right hide-on-med-and-down">
             {% if user.is_authenticated %}
                 <li>
-                    <form action="{% url 'search' %}" method="GET">
+                    <form class="search" action="{% url 'search' %}" method="GET">
                         {% csrf_token %}
                         <input id="search" type="search" name="search" required placeholder="Search here">
                         <label for="search"></label>
@@ -63,7 +64,7 @@
                 <li><a href="{% url "products" %}"><i class="fa fa-bars" aria-hidden="true"></i> Products</a></li>
                 <li><a href="{% url "view_cart" %}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
                     {% if product_count > 0 %}
-                        <label>{{ product_count }}</label>
+                        <label class="counter">{{ product_count }}</label>
                     {% endif %}</a></li>
             {% endif %}
         </ul>
@@ -110,7 +111,7 @@
         <li><a href="{% url "products" %}"><i class="fa fa-bars" aria-hidden="true"></i> Products</a></li>
         <li><a href="{% url "view_cart" %}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
             {% if product_count > 0 %}
-                <label>{{ product_count }}</label>
+                <label class="counter">{{ product_count }}</label>
             {% endif %}</a></li></a></li>
     {% endif %}
 </ul>
@@ -131,18 +132,18 @@
                 <ul class="list-inline">
                     <li>
                         <a class="grey-text text-lighten-3" target="_blank"
-                           href="https://www.facebook.com/timea.kovacs.3994"><i class="fa fa-facebook fa-2x"
+                           href="https://www.facebook.com/timea.kovacs.3994"><i class="fa fa-facebook fa-3x"
                                                                                 aria-hidden="true"></i><span
                                 class="sr-only">Facebook</span></a>
                     </li>
                     <li>
                         <a class="grey-text text-lighten-3" target="_blank" href="https://github.com/TimeaKovacs86"><i
-                                class="fa fa-github fa-2x" aria-hidden="true"></i>
+                                class="fa fa-github fa-3x" aria-hidden="true"></i>
                             <span class="sr-only">GitHub</span></a>
                     </li>
                     <li>
                         <a class="grey-text text-lighten-3" target="_blank"
-                           href="https://www.linkedin.com/in/timeakovacs86/"><i class="fa fa-linkedin fa-2x"
+                           href="https://www.linkedin.com/in/timeakovacs86/"><i class="fa fa-linkedin fa-3x"
                                                                                 aria-hidden="true"></i>
                             <span class="sr-only">LinkedIn</span></a>
                     </li>
