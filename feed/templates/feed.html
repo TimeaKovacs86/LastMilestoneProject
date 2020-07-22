@@ -13,7 +13,7 @@
         <h5>{{ feed_element.title }}</h5>
         <p>{{ feed_element.created_at }}</p>
         {% if feed_element.images %}
-            <div class="images" style="background-image: url('{{ MEDIA_URL }}{{ feed_element.images }}')"></div>
+            <div class="images feed-images" style="background-image: url('{{ MEDIA_URL }}{{ feed_element.images }}')"></div>
         {% endif %}
         <p>{{ feed_element.description }}</p>
         </div>
