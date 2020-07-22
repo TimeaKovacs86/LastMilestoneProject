@@ -298,6 +298,12 @@ form input {
         color: rgba(0, 0, 0, 0.87);
         border-bottom: 1px solid #fafafa;
     }
+    h2 {
+        font-size: 30px;
+    }
+    .welcome p {
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 767px) {
