@@ -13,6 +13,14 @@
         //]]>
     </script>
     <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+
+            // Initialize materialize form select
+            $('select').formSelect();
+
+        });
+    </script>
 {% endblock %}
 {% block page_title %} Checkout page {% endblock %}
 
@@ -43,4 +51,13 @@
             </button>
         </form>
     </div>
+    <script>
+        $('#id_credit_card_number')
+            .attr('oninvalid', 'this.setCustomValidity(\'This is more than 16 long digits\')')
+            .attr('oninput', 'this.setCustomValidity(\'\')')
+
+        $('#id_cvv')
+            .attr('oninvalid', 'this.setCustomValidity(\'This is more than 3 long digits\')')
+            .attr('oninput', 'this.setCustomValidity(\'\')')
+    </script>
 {% endblock %}
