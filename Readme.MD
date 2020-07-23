@@ -4,6 +4,8 @@
 
 [![Build Status](https://travis-ci.com/TimeaKovacs86/LastMilestoneProject.svg?branch=master)](https://travis-ci.com/TimeaKovacs86/LastMilestoneProject)
 
+- View the deployed website: [link](https://lastmilestoneproject-webshop.herokuapp.com/)
+
 ## Index
 
 - I. [UX](#ux)
@@ -20,6 +22,99 @@
 
 ## UX
 [Up to top](#index)
+
+### Colors & Icons
+
+
+### Responsive
+
+The web application is fully responsive and works properly and looks good on Mobile/Tablet/PC devices respectively.
+
+### User stories
+
+#### Accounts
+
+- As a user, I want to register on the site
+- Aa a user, I want to get feedback after I register on the website 
+- As a user, I want to logged in right after the registration
+- As a user, I want to get feedback when there is something wrong in during the registration (Unique username and password, fields)
+- As a user, I want to log in the site
+- As a user, I want to log out from the site
+- As a user, I want to see my details
+- As a user, I want to change my details
+- As a user, I want to change my password
+- As a user, I want to reset my password in that case if I forget it.
+- As a user, I want to get email after password reset
+- As a user, I want to get feedback when I logged in
+- As a user, I want to get feedback if the password is wrong
+
+#### Feed
+
+- As a user, I don't want to reach the page until I am not logged in
+- As a user, I want to see the Feeds after I logged in
+
+#### Products
+
+- As a user, I want to choose between product
+- As a user, I want to get feedback after I put an item into the cart
+- As a user, I want to see the product separately
+- As a user, I want to put the product from the separate product page
+- As a user, after the login I want to write review on the separate product page
+- As a user, I want to get feedback if I write a review
+
+#### Cart
+
+- As a user, I want to give one item in the cart
+- As a user, I want to give two or more item in the cart
+- As a user, I want to amend the quantity
+- As a user, I want to see next to cart item in the navigation bar that how many items I picked 
+- As a user, I want to see the sum products and sum value that I have to pay on the cart page
+- As a user, I want to reach the checkout page after clicking on the Checkout button
+
+#### Checkout
+
+- As a user, I want to pay with my card details
+- As a user, I want to get feedback after the payment
+- As a user, I want to get feedback if there is something wrong with the payment(Field, Card, etc.)
+- As a user, I want to see the summary page about what I bought and how much should I pay
+
+#### Search
+
+- As a user, I want to search after the products
+- As a user, I get feedback if there is no matching product on the page
+
+#### Error handling
+
+- As a user, I want to arrive on the 404 Error page if I mistype the url
+- As a user, I want to navigate back from the 404 error page
+
+### Mock up
+
+- **Created with [Balsamiq Mockups 3](https://balsamiq.com/) that is a user interface design tool**
+    - **Landing page**:
+    ![Landing page](project-description/mockups/Home_page.png)
+    - **Log in page**:
+    [Login page](project-description/mockups/Log_In.png)
+    - **Register page**:
+    [Login page](project-description/mockups/Register_page.png)
+    - **Feed page**:
+    [Feed page](project-description/mockups/Feed_page.png)
+    - **Change password page**:
+    [Change password page](project-description/mockups/Change_password_page.png)
+    - **Profile page**:
+    [Profile page](project-description/mockups/Profile_page.png)
+    - **Update profile page**:
+    [Update profile page](project-description/mockups/Update_profile_page.png)
+    - **Product page**:
+    ![Product page](project-description/mockups/Products_page.png)
+    - **View product page**:
+    [View product page](project-description/mockups/View_product_page.png)
+    - **Cart page**:
+    [Cart page](project-description/mockups/Cart_page.png)
+    - **Checkout page**:
+    [Checkout page](project-description/mockups/Checkout_page.png)
+    - **404 error page**:
+    [404 error page](project-description/mockups/404_error_page.png)
 
 ## Technologies_Used
 [Up to top](#index)
@@ -61,12 +156,29 @@
 ## Features
 [Up to top](#index)
 
+- Admin can can add new product/create feed
+- The user can add product in the cart
+- User can write review under the product
+- User can login/logout
+- User can make payment
+- User can give review 
+- User can modify/reset password
+- 404 error page when there is a mistype in the url
+- Search functionality between the products
+- Timeline after I log in
+- Store the static and media files on AWS
+- Automated test and test coverage
+- Database sqlite for local and travis. PostgreSQL on Heroku
+- Travis CI running on sqlite
+
 ### Features left to implement
+
+- Order history
 
 ## Test
 [Up to top](#index)
 
-You can see the test description under this link [link]()
+You can see the test description under this link [link](https://github.com/TimeaKovacs86/LastMilestoneProject/blob/master/Testing.MD)
 
 - Information about why I commit the .travis.yml file (Copied from the Travis official site):
     - "Note that for historical reasons .travis.yml needs to be present on all active branches of your project."
@@ -131,7 +243,8 @@ I use git for version control
 
 ## AWS
 [Up to top](#index)
-You can see the AWS Setup description under this [link]()
+
+You can see the AWS Setup description under this [link](https://github.com/TimeaKovacs86/LastMilestoneProject/blob/master/Setup_AWS.MD)
 
 ## Media
 [Up to top](#index)

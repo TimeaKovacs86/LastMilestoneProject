@@ -9,14 +9,14 @@ For Manual testing me and some of my friend and acquaintances tested the web app
 
 - Testing devices:
     - Mobile:
-        - Google Pixel 5
+        - Google Pixel 3
         - iPhone SE
     - Tablet:
         - iPad
     - PC and notebooks with HD resolution
 
 
-- Jigsaw CSS validator: [link](https://jigsaw.w3.org/css-validator/validator)
+- Jigsaw CSS validator: [link](https://jigsaw.w3.org/css-validator/#validate_by_input)
 
 ### User stories 
 
