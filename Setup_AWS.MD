@@ -51,7 +51,6 @@ I configured the CORS config and bucket policy as below:
     ````bash
     python manage.py colletcstatic
     ````
-    - If the QA branch is finished, we can run the "collectstatic" for the prod.
     - Configure Procfile: "python manage.py collectstatic --noinput --noreload;"
         - Collect static after every deploy
         - The server will run only once instead of twice

@@ -291,8 +291,7 @@ python manage.py test
 - Automated testing with Travis CI [link](https://travis-ci.org/)
 
 I use Travis which is a CI (Continuous Integration) service used to test software in the cloud. After a commit the 
-travis jobs runs to test on the pipeline. It will run when I do merge from DEv branch to QA branch. It helps to me to get
-fast feedback about the tests. 
+travis jobs runs to test on the pipeline.It helps to me to get fast feedback about the tests. 
 
 ## Stripe details:
 

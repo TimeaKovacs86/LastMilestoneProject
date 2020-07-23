@@ -156,12 +156,11 @@ The web application is fully responsive and works properly and looks good on Mob
 ## Features
 [Up to top](#index)
 
-- Admin can can add new product/create feed
+- Admin can add new product/create feed
 - The user can add product in the cart
 - User can write review under the product
 - User can login/logout
 - User can make payment
-- User can give review 
 - User can modify/reset password
 - 404 error page when there is a mistype in the url
 - Search functionality between the products
@@ -190,7 +189,7 @@ I use git for version control
 
 - Git commit after every given useful part of the project
 - Git push into my github repository (Parallel runs the travis tests)
-- Automatic deploy on Heroku to QA application when the running Travis test is passed
+- Automatic deploy on Heroku application when the running Travis test is passed
 - Automatic deploy on Heroku to master branch
 - Run the additional commands:
     - "migrate" command (When the database schema changed):
