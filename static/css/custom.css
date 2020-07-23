@@ -14,6 +14,10 @@ main {
     flex: 1 0 auto;
 }
 
+h4 {
+    text-align: center;
+}
+
 .row {
     margin-bottom: 0;
 }
@@ -229,8 +233,10 @@ form input {
     margin-right: 25px;
 }
 
-
-
+.checkout p {
+    font-size: 24px;
+    font-weight: bold;
+}
 
 /*Footer*/
 
@@ -287,6 +293,15 @@ form input {
     html {
         font-family: Merriweather, sans-serif;
     }
+
+    .welcome p {
+        width: 80%;
+    }
+
+    .products:hover {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
 }
 
 @media (max-width: 993px) {
@@ -298,9 +313,11 @@ form input {
         color: rgba(0, 0, 0, 0.87);
         border-bottom: 1px solid #fafafa;
     }
+
     h2 {
         font-size: 30px;
     }
+
     .welcome p {
         font-size: 12px;
     }
@@ -321,9 +338,7 @@ form input {
 
 }
 
-/*Iphone5*/
-
-@media (max-width: 321px) {
+@media (max-width: 375px) {
     .brand-logo {
         font-size: 1.3rem !important;
     }

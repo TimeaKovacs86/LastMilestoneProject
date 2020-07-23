@@ -58,20 +58,10 @@ class CheckoutTesCase(TestCase):
         test_model = Order(town_or_city="Dublin")
         self.assertEqual(str(test_model.town_or_city), "Dublin")
 
-    def test_checkout_street_address1(self):
+    def test_checkout_street_address(self):
         """ Test street address 1 field """
-        test_model = Order(street_address1="Wintergarden Apartments 48, The Pine")
-        self.assertEqual(str(test_model.street_address1), "Wintergarden Apartments 48, The Pine")
-
-    def test_checkout_street_address2(self):
-        """ Test street address 2 field """
-        test_model = Order(street_address2="Pearse Street 107")
-        self.assertEqual(str(test_model.street_address2), "Pearse Street 107")
-
-    def test_checkout_county(self):
-        """ Test county field """
-        test_model = Order(county="Dublin")
-        self.assertEqual(str(test_model.county), "Dublin")
+        test_model = Order(street_address="Wintergarden Apartments 48, The Pine")
+        self.assertEqual(str(test_model.street_address), "Wintergarden Apartments 48, The Pine")
 
     def test_checkout_email(self):
         """ Test email field """
@@ -98,9 +88,7 @@ class CheckoutTesCase(TestCase):
             'country': 'Ireland',
             'postcode': 'Dublin 2',
             'town_or_city': 'Dublin',
-            'street_address1': 'Test Street',
-            'street_address2': 'Test Street 2',
-            'county': 'Dublin'
+            'street_address': 'Test Street',
         }
         form = OrderForm(data=form_data)
         self.assertTrue(form.is_valid())
