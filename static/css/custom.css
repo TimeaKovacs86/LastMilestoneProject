@@ -242,6 +242,21 @@ form input {
     text-align: center;
 }
 
+/*404 Error Page*/
+
+.error-404-body {
+    text-align: center;
+    color: black;
+}
+
+.error-404-paragraph {
+    text-align: center;
+    font-size: 66px;
+    top: 20%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
 /*Footer*/
 
 
@@ -304,6 +319,10 @@ form input {
 
     .products:hover {
         background-color: rgba(0, 0, 0, 0);
+    }
+
+    .error-404-paragraph {
+        font-size: 50px;
     }
 
 }
