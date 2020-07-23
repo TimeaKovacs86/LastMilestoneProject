@@ -178,7 +178,7 @@ The web application is fully responsive and works properly and looks good on Mob
 ## Test
 [Up to top](#index)
 
-You can see the test description under this link [link](https://github.com/TimeaKovacs86/LastMilestoneProject/blob/master/Testing.MD)
+You can see the test description under this [link](https://github.com/TimeaKovacs86/LastMilestoneProject/blob/master/Testing.MD)
 
 - Information about why I commit the .travis.yml file (Copied from the Travis official site):
     - "Note that for historical reasons .travis.yml needs to be present on all active branches of your project."

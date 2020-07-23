@@ -4,15 +4,15 @@
 <!-- Cart content -->
 {% block content %}
     <div class="container">
+        <!-- Unique message when the cart is empty -->
         {% if cart_not_empty is False %}
             <h4>Your cart is empty!</h4>
         {% endif %}
-
         <div class="row">
             {% for item in cart_items %}
                 <div class="col s12 m6 xl4 ">
                     <div class="products">
-                        <div >
+                        <div>
                             <form class="text-right" method="POST" action="{% url "delete_cart" item.id %}">
                                 {% csrf_token %}
                                 <button type="submit" class="btn">
@@ -36,7 +36,7 @@
                                 <label for="exampleInputAmount" class="sr-only">New Qty</label>
                                 <div>
                                     <div>
-                                        <input name="quantity" type="number" min="1" max="999"
+                                        <input class="amend-value-align" name="quantity" type="number" min="1" max="999"
                                                aria-label="quantity" required>
                                     </div>
                                     <div class="row amend">
@@ -55,7 +55,6 @@
                 </div>
             {% endfor %}
         </div>
-
         <!-- Checkout section -->
         {% if cart_not_empty is True %}
             <div class="row checkout">

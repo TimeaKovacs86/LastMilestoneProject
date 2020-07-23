@@ -14,7 +14,8 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Custom CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Poppins:wght@300;400&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <!-- Import jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -29,6 +30,7 @@
     </title>
 </head>
 <body>
+<!-- Navigation for larger resolution -->
 <nav>
     <div class="nav-wrapper">
         <a href="{% url "index" %}" class="brand-logo">Heit Horseradish</a>
@@ -80,6 +82,7 @@
         {% endfor %}
     {% endif %}
 </div>
+<!-- Navigation hamburger menu for smaller resolutions -->
 <ul class="sidenav" id="mobile-demo">
     {% if user.is_authenticated %}
         <li>
@@ -115,12 +118,13 @@
             {% endif %}</a></li></a></li>
     {% endif %}
 </ul>
-
+<!-- Main section -->
 <main>
     {% block content %}
     {% endblock %}
 </main>
 </body>
+<!-- Footer -->
 <footer class="page-footer">
     <div class="container">
         <div class="row">
@@ -161,6 +165,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- Activate Materialize side nav in smaller resolution -->
 <script>
     $(document).ready(function () {
         $('.sidenav').sidenav();

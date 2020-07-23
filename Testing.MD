@@ -284,7 +284,7 @@ python manage.py test
     coverage html
     ````
     - I put the htmlcov folder in the .gitignore file 
-    - ![Coverage screenshot](project-description/coverage/coverage_80.JPG)
+    - ![Coverage screenshot](project-description/coverage/coverage.PNG)
 
 ### Cloud
 

@@ -4,19 +4,22 @@
 
 <!-- Stripe JS preload -->
 {% block stripe_js %}
+    <!-- Import Stripe for payment -->
     <script type="text/javascript" src="http://js.stripe.com/v2/"></script>
-
+    <!-- Add public key for Stripe payment -->
     <script type="text/javascript">
         //<![CDATA[
         {#var stripe = Stripe('{{ publishable }}');#}
         Stripe.publishableKey = '{{ publishable }}';
         //]]>
     </script>
+    <!-- Import additional Stripe scripts for payment -->
     <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
 {% block page_title %} Checkout page {% endblock %}
 
 {% block content %}
+    <!-- Checkout section -->
     <div class="container">
         <form role="form" method="post" id="payment-form">
             {% csrf_token %}
@@ -31,18 +34,20 @@
             <div id="credit-card-errors display-none">
                 <div id="alert-message block-message error" id="stripe-error-message"></div>
             </div>
+            <!-- Payment form -->
             <div>
                 {{ payment_form|materializecss }}
             </div>
+            <!-- Order form -->
             <div>
                 {{ order_form|materializecss }}
             </div>
-
             <button class="btn" type="submit" id="submit_payment_btn" name="commit"><i class="fa fa-flag-checkered"></i>
                 Submit Payment
             </button>
         </form>
     </div>
+    <!-- Add unique error message for the credit card fields -->
     <script>
         $('#id_credit_card_number')
             .attr('oninvalid', 'this.setCustomValidity(\'This is more than 16 long digits\')')
@@ -50,6 +55,14 @@
 
         $('#id_cvv')
             .attr('oninvalid', 'this.setCustomValidity(\'This is more than 3 long digits\')')
+            .attr('oninput', 'this.setCustomValidity(\'\')')
+
+        $('#id_expiry_month')
+            .attr('oninvalid', 'this.setCustomValidity(\'The month value is out of range\')')
+            .attr('oninput', 'this.setCustomValidity(\'\')')
+
+        $('#id_expiry_year')
+            .attr('oninvalid', 'this.setCustomValidity(\'The year value is out of range\')')
             .attr('oninput', 'this.setCustomValidity(\'\')')
 
     </script>

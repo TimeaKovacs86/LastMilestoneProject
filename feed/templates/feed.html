@@ -3,20 +3,22 @@
 {% block page_title %} Feed page {% endblock %}
 
 {% block content %}
+    <!-- Feed section -->
     <div class="container welcome">
-    <div class="row">
-    <h1>News</h1>
-    </div>
-    <!-- Feed content -->
-    {% for feed_element in feed_elements %}
         <div class="row">
-        <h5>{{ feed_element.title }}</h5>
-        <p>{{ feed_element.created_at }}</p>
-        {% if feed_element.images %}
-            <div class="images feed-images" style="background-image: url('{{ MEDIA_URL }}{{ feed_element.images }}')"></div>
-        {% endif %}
-        <p>{{ feed_element.description }}</p>
+            <h1>News</h1>
         </div>
-    {% endfor %}
+        <!-- Feed content -->
+        {% for feed_element in feed_elements %}
+            <div class="row">
+                <h5>{{ feed_element.title }}</h5>
+                <p>{{ feed_element.created_at }}</p>
+                {% if feed_element.images %}
+                    <div class="images feed-images"
+                         style="background-image: url('{{ MEDIA_URL }}{{ feed_element.images }}')"></div>
+                {% endif %}
+                <p>{{ feed_element.description }}</p>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

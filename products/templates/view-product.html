@@ -6,7 +6,7 @@
 
 {% block content %}
     <div class="container">
-    <!-- Product detail section -->
+        <!-- Product detail section -->
         <div>
             <div class="images product-image"
                  style="background-image: url('{{ MEDIA_URL }}{{ product.images }}')"></div>
@@ -14,18 +14,18 @@
             <p class="products-description">{{ product.description_section }}</p>
             <p class="products-price">{{ product.price }} {{ product.currency }}</p>
         </div>
-    <!-- Add to cart -->
-            <form method="post" action="{% url 'add_to_cart' product.id %}">
-                {% csrf_token %}
-                <div class="quantity-container">
-                    <input class="quantity-align" name="quantity" type="number" min="1" max="999"
-                           value="1" aria-label="quantity" required>
-                    <div class="btn-add">
-                            <button class="btn" type="submit"><i class="fa fa-plus"></i> Add</button>
-                    </div>
+        <!-- Add to cart -->
+        <form method="post" action="{% url 'add_to_cart' product.id %}">
+            {% csrf_token %}
+            <div class="quantity-container">
+                <input class="quantity-align" name="quantity" type="number" min="1" max="999"
+                       value="1" aria-label="quantity" required>
+                <div class="btn-add">
+                    <button class="btn" type="submit"><i class="fa fa-plus"></i> Add</button>
                 </div>
-            </form>
-    <!-- Review container section -->
+            </div>
+        </form>
+        <!-- Review container section -->
         <div>
             <div>
                 {% for review in reviews %}
@@ -36,7 +36,7 @@
                 {% endfor %}
             </div>
         </div>
-    <!-- Add review container section -->
+        <!-- Add review container section -->
         {% if user.is_authenticated %}
             <div>
                 <div>
@@ -59,6 +59,7 @@
                 </div>
             </div>
         {% else %}
+            <!-- Redirect to login if we are not logged in -->
             <h4>To write review, please
                 <a href="{% url 'login' %}"> >>log in<< </a>
             </h4>

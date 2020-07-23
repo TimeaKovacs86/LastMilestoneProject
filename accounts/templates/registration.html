@@ -3,14 +3,14 @@
 {% block page_title %} Registration {% endblock %}
 
 {% block content %}
+    <!-- User registration section -->
     <div class="container registration">
-
-    <form method="post">
-        {% csrf_token %}
-        {{ registration_form|materializecss }}
-        <div class="button-container">
-        <input class="btn" type="submit" value="Registration"/>
-        </div>
-    </form>
+        <form method="post">
+            {% csrf_token %}
+            {{ registration_form|materializecss }}
+            <div class="button-container">
+                <input class="btn" type="submit" value="Registration"/>
+            </div>
+        </form>
     </div>
 {% endblock %}

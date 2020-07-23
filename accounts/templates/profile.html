@@ -3,6 +3,7 @@
 {% block page_title %} {{ user_form.username }}'s Profile {% endblock %}
 
 {% block content %}
+    <!-- User Profile section -->
     <div class="container">
         <div class="row">
             <div class="profile-info">
@@ -36,11 +37,9 @@
             <a href="{% url 'edit_profile' %}">
                 <button class="btn"><i class="fa fa-pencil"></i> Update Details</button>
             </a>
-
             <a href="{% url 'change_password' %}">
                 <button class="btn"><i class="fa fa-pencil"></i> Change Password</button>
             </a>
         </div>
-
     </div>
 {% endblock %}

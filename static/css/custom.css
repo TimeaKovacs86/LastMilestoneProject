@@ -238,6 +238,10 @@ form input {
     font-weight: bold;
 }
 
+.amend-value-align {
+    text-align: center;
+}
+
 /*Footer*/
 
 

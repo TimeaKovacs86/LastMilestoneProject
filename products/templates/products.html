@@ -3,9 +3,11 @@
 {% block page_title %} Products {% endblock %}
 
 {% block content %}
+    <!-- Notification when the cart is empty -->
     {% if is_empty is False %}
         <p>There is no matching result!</p>
     {% endif %}
+    <!-- Products container -->
     <div class="container">
         <div class="row">
             {% for product in products %}
@@ -25,8 +27,9 @@
                             {% csrf_token %}
                             <div>
                                 <div class="quantity-container">
-                                    <input class="quantity-align" name="quantity" type="number" min="1" max="999" value="1"
-                                           aria-label="quantity" required >
+                                    <input class="quantity-align" name="quantity" type="number" min="1" max="999"
+                                           value="1"
+                                           aria-label="quantity" required>
                                 </div>
                                 <div class="btn-add">
                                     <button class="btn" type="submit"><i class="fa fa-plus"></i> Add</button>
@@ -38,5 +41,4 @@
             {% endfor %}
         </div>
     </div>
-
 {% endblock %}
