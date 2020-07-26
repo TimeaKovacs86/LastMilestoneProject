@@ -118,6 +118,10 @@ form input {
     margin-top: 0;
 }
 
+.btn-align {
+    text-align: center;
+}
+
 /*Profile page*/
 
 .profile-info {

@@ -240,6 +240,8 @@ I use git for version control
     - Online:
         - Storing as environmental variables (Travis CI and Heroku)
 
+ - For the password reset I use my own Google account, there is a"Less secure app access" function I have to turn off to be able to send out the reset email for the users, and because of the security vulnerability what this causes, The Google automatically turns it back to on, from time to time.           
+
 ## AWS
 [Up to top](#index)
 

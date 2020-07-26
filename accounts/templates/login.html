@@ -10,17 +10,15 @@
                 {% csrf_token %}
                 {{ login_form|materializecss }}
                 <div class="button-container">
-                    <div>
-                        <input class="btn" type="submit" value="Log In"/>
-                    </div>
-                    <div>
-                        <a href="{% url 'password_reset' %}">
-                            <p class="btn btn-info login-page"><i class="fa fa-unlock-alt"></i> Forget your
-                                password?</p>
-                        </a>
-                    </div>
+                    <button class="btn btn-info login-page" type="submit"><i class="fa fa-sign-in"></i> Log In</button>
                 </div>
             </form>
+            <div class="btn-align">
+                <a href="{% url 'password_reset' %}">
+                    <button class="btn btn-info login-page"><i class="fa fa-unlock-alt"></i> Forget your
+                        password?</button>
+                </a>
+            </div>
         </div>
     </div>
 {% endblock %}
