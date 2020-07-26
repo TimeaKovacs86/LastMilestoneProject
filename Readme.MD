@@ -225,6 +225,16 @@ I use git for version control
     ```bash
     python manage.py colletcstatic
     ```
+
+    - With the following code we can be sure that locally we leave the DEBUG mode in true, but use DEBUG false during running the application on Heroku:
+  ```python
+    if os.environ.get('DEVELOPMENT'):
+      development = True
+    else:
+      development = False
+  
+      DEBUG = development
+   ```
   
 #### Application hosts and databases
 
