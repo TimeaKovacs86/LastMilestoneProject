@@ -1,11 +1,11 @@
 # Testing
 
-For this project I could use mixed testing that means. I test the project manually and runs the test automatically locally
+For this project I used mixed testing what means:  I test the project manually and runs the test automatically locally
 and in the cloud as well as you can see below.
 
 ## Manual Testing:
 
-For Manual testing me and some of my friend and acquaintances tested the web application.
+For Manual testing me and some of my friend are tested the web application.
 
 - Testing devices:
     - Mobile:
@@ -17,6 +17,7 @@ For Manual testing me and some of my friend and acquaintances tested the web app
 
 
 - Jigsaw CSS validator: [link](https://jigsaw.w3.org/css-validator/#validate_by_input)
+- PEP8 online validator: [link](pep8online.com)
 
 ### User stories 
 
@@ -46,7 +47,7 @@ For Manual testing me and some of my friend and acquaintances tested the web app
 
 - Scenario: Unique name and format
     - I am on the registration page
-    - I give an used <field_name>
+    - I give a used <field_name>
     - I click on the Register button
     - I get back a notification about the missing or mistyped field
 
@@ -105,7 +106,7 @@ For Manual testing me and some of my friend and acquaintances tested the web app
 - Scenario: I can see the Feed page after login
     - I arrive on the page
     - I log in
-    - I am arrive on the Feed page and the Feed menu is available
+    - I am arrive on the Feed page and the Feed menu item is available
 - Scenario: I can't see the Feed page when I am not logged in
     - I arrive on the page
     - I don't log in
@@ -136,9 +137,9 @@ For Manual testing me and some of my friend and acquaintances tested the web app
 - Scenario: I can write review on the detailed product page after I logged in and get notification about that
     - I logged in previously
     - I am on the detailed product page
-    - I write a comment
-    - I click on the Comment button
-    - I can see my comment and I get back notification about the successfully given comment
+    - I write a review
+    - I click on the Review button
+    - I can see my comment and I get back notification about the successfully given review
     
 - Scenario: I can't write review on the detailed product page
     - I am not logged in before
@@ -149,8 +150,8 @@ For Manual testing me and some of my friend and acquaintances tested the web app
 
 - Scenario: I can see on the navigation bar how many items I've added
     - I am on the product page
-    - I give 3 items in the cart
-    - I can see a "3" number next to the cart in the navigation bar
+    - I give 4 items in the cart
+    - I can see a "4" number next to the cart in the navigation bar
 
 - Scenario: I can't see product under the cart menu until I don't add a product in it
     - I click on the Cart navigation item
@@ -158,9 +159,9 @@ For Manual testing me and some of my friend and acquaintances tested the web app
 
 - Scenario: I can see the given product under the Cart menu
     - I am on the product page
-    - I give 3 items in the cart
+    - I give 4 items in the cart
     - I click on the Cart navigation item
-    - I can see the 3 given items on the Cart page
+    - I can see the 4 given items on the Cart page
 
 - Scenario: I can delete an item (notification)
     - I am on the cart page
@@ -178,13 +179,13 @@ For Manual testing me and some of my friend and acquaintances tested the web app
     - I am on the cart page
     - I have previously given item in the cart
     - I click on the Checkout button
-    - I redirected on the Checkout page
+    - I redirected to the Checkout page
     
 - Scenario: I can't check out until I am not logged in
     - I am on the cart page
     - I have previously given item in the cart
     - I click on the Checkout button
-    - I redirected on the Login page
+    - I redirected to the Login page
     
 - Scenario: I can see the sum value of how much should I pay for the products
     - I am on the cart page
@@ -200,11 +201,6 @@ For Manual testing me and some of my friend and acquaintances tested the web app
 
 - Scenario: I can see the product on the checkout page
     - I arrive on the Checkout page
-    - I can see the product list that I want to buy
-
-- Scenario: I can see how much should I pay
-    - I arrive on the Checkout page
-    - I can see the Sum value that should I pay
 
 - Scenario: I can pay
     - I arrive on the Checkout page
@@ -253,7 +249,7 @@ For Manual testing me and some of my friend and acquaintances tested the web app
     - I am on the page
     - I mistype the url
     - I can see the 404 error
-    - I click on the "Back to the page button"
+    - I click on the browsers back button
     - I arrive back to the page
 
 

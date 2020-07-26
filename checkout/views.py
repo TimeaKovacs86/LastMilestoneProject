@@ -9,15 +9,7 @@ from django.utils import timezone
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
 
-# Set your secret key. Remember to switch to your live secret key in production!
-# See your keys here: https://dashboard.stripe.com/account/apikeys
 stripe.api_key = os.environ.get('STRIPE_SECRET_KEY')
-
-
-# Create your views here.
-
-# Token is created using Stripe Checkout or Elements!
-# Get the payment token ID submitted by the form:
 
 
 # Create your views here.

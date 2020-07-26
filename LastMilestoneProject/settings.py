@@ -100,6 +100,8 @@ if development:
     }
 else:
     DATABASES = {'default': dj_database_url.parse(str(os.environ.get('DATABASE_URL')))}
+
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -174,6 +176,8 @@ AUTHENTICATION_BACKENDS = [
 # Messages
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
+
+# Need for Forget Password function
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_USE_TLS = True

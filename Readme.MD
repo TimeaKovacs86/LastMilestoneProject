@@ -19,16 +19,35 @@
 ## Description
 [Up to top](#index)
 
+The project is my fourth milestone project which is a full stack web application, which is an online shop
+ where you can buy handcrafted bio horseradish products with secure payment. 
+ Next to it's main functionality, we can create, and update our account, 
+ and access the feed page after the login where we can get information about the new products, 
+ and events where we can personally purchase the merchandise. 
+ On the product page you can pick out your favorite horseradishes to buy and give some review 
+ about them if you would like to. If you are logged in you can purchase your picked item directly from the cart 
+ through the checkout page.
 
 ## UX
 [Up to top](#index)
 
+I was searching for a color scheme for this project which would refer to the product, what the web shop is selling, so I decided to pick rustic subjects as in raw wood for the header and footer background picture and added some texture to the pages background with the wallpaper.
+
+I choose fonts that are optimized for interfaces, UI Optimized web fonts (Poppins), and others that are especially legible in paragraphs, 
+ or particularly comfortable for reading on mobile and legible on any device - be it smartphone, desktop or tablet.(Merriweather)
+
+Decided to use Materialize this time as a framework, because as my personal opinion, it gives a more modern look to any website than bootstrap.
+
 ### Colors & Icons
 
+As I mentioned earlier, I picked a kinda earthy, autumn color scheme with the orange/yellowish/terracotta with a little of the dark green/blue choice for the buttons, 
+because I thought it would give some extra since the product what the web shop is selling is a harvestable root vegetable.
+
+I use fontawesome icons for the buttons and navigation menu items through the pages, to easily distinguish those elements on the pages. I use a favicon (jar), because all of our products are coming in jars.  
 
 ### Responsive
 
-The web application is fully responsive and works properly and looks good on Mobile/Tablet/PC devices respectively.
+The web application is fully responsive, works properly and looks good on Mobile/Tablet/PC devices respectively.
 
 ### User stories
 
@@ -40,8 +59,8 @@ The web application is fully responsive and works properly and looks good on Mob
 - As a user, I want to get feedback when there is something wrong in during the registration (Unique username and password, fields)
 - As a user, I want to log in the site
 - As a user, I want to log out from the site
-- As a user, I want to see my details
-- As a user, I want to change my details
+- As a user, I want to see my user details
+- As a user, I want to change my user details
 - As a user, I want to change my password
 - As a user, I want to reset my password in that case if I forget it.
 - As a user, I want to get email after password reset
@@ -58,17 +77,18 @@ The web application is fully responsive and works properly and looks good on Mob
 - As a user, I want to choose between product
 - As a user, I want to get feedback after I put an item into the cart
 - As a user, I want to see the product separately
-- As a user, I want to put the product from the separate product page
+- As a user, I want to put the product in the cart from the separate product page as well as from the whole products page 
 - As a user, after the login I want to write review on the separate product page
 - As a user, I want to get feedback if I write a review
 
 #### Cart
 
-- As a user, I want to give one item in the cart
-- As a user, I want to give two or more item in the cart
+- As a user, I want to add one item in the cart
+- As a user, I want to add two or more item in the cart
 - As a user, I want to amend the quantity
-- As a user, I want to see next to cart item in the navigation bar that how many items I picked 
+- As a user, I want to see next to cart icon in the navigation bar that how many items I picked 
 - As a user, I want to see the sum products and sum value that I have to pay on the cart page
+- As a user, I want to see the summary page about what I bought and how much should I pay
 - As a user, I want to reach the checkout page after clicking on the Checkout button
 
 #### Checkout
@@ -76,7 +96,6 @@ The web application is fully responsive and works properly and looks good on Mob
 - As a user, I want to pay with my card details
 - As a user, I want to get feedback after the payment
 - As a user, I want to get feedback if there is something wrong with the payment(Field, Card, etc.)
-- As a user, I want to see the summary page about what I bought and how much should I pay
 
 #### Search
 
@@ -172,7 +191,9 @@ The web application is fully responsive and works properly and looks good on Mob
 
 ### Features left to implement
 
-- Order history
+- Order history (Keep previously added products in cart, after closing the browser.)
+- Bug: I get a fault message in the console every time when I am landin on a page that supposed to have a toast, but nothing triggers any message yet. I didn't find a solution to disable it.
+
 
 ## Test
 [Up to top](#index)
@@ -205,20 +226,9 @@ I use git for version control
     python manage.py colletcstatic
     ```
   
-- Before every deployment:
-    - Upload database schema:
-        - Change database url in env.py and type the following command to migrate changes:
-        ````bash
-        python manage.py migrate
-       ````
-        - After that I run te following command in order to update the database schema:
-        ````bash
-        python manage.py makemigration
-       ````
-
 #### Application hosts and databases
 
-- For Architecture design I use MVT design pattern (Model-View-Template). Thanks for this I don't have to write raw sql queries.
+- For Architecture design I use MVT design pattern (Model-View-Template). Thanks to this I don't have to write raw sql queries.
 - Application and Database
     - Heroku with PostgreSQL
     - Localhost with sqlite3 (Automated test with travis is running on sqlite3 as well.)
@@ -251,23 +261,24 @@ You can see the AWS Setup description under this [link](https://github.com/Timea
 [Up to top](#index)
 
 - Favicon picture:
-    - Picture 1: [link]()
+    - Picture 1: [link](https://icons8.com/icons/set/jar)
     
 - Header and footer picture:
     - Picture 1: [link](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT8ho-QShrEcenwzO-XwYUbpUjsT3fKN7xxFw&usqp=CAU)
 
 - Welcome page picture:
-    - Picture 1: [link]()
+    - Picture 1: [link](https://heit.hu/wp-content/uploads/2016/06/terkep_hatterrel-300x218.png)
 
 - Feed page pictures:
     - Picture 1: [link](https://thumbs.dreamstime.com/b/horseradish-honey-166263672.jpg)
     - Picture 2: [link](https://foodal.com/wp-content/uploads/2017/06/Raw-Horseradish-Wrapped-in-Paper-and-Twine.jpg)
-    - Picture 3: [link]()
+    - Picture 3: [link](https://media.istockphoto.com/photos/green-peppers-horseradish-garlic-and-herbs-on-a-slate-cutting-board-picture-id1055873534?k=6&m=1055873534&s=612x612&w=0&h=7Ow2K18uFZJb8OYSYK6_WYZlx2PqX9NrapN5XtUkwNw=)
 
 - Products page pictures:
-    - Picture 1: [link]()
-    - Picture 2: [link](https://i.pinimg.com/236x/ca/87/78/ca8778a4e96433594a97618b1ab0b5d1.jpg)
-    - Picture 3: [link](https://foodal.com/wp-content/uploads/2017/06/Raw-and-Grated-Horseradish.jpg)
-    - Picture 4: [link](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTVSUlkw6Y2KTS-dM5b-SacIGUKJW_93GyNew&usqp=CAU)
-    - Picture 5: [link](https://www.permaculturenews.org/wp-content/uploads/2018/10/Horseradish-Root.jpg)
-    - Picture 6: [link](https://media.istockphoto.com/photos/green-peppers-horseradish-garlic-and-herbs-on-a-slate-cutting-board-picture-id1055873534?k=6&m=1055873534&s=612x612&w=0&h=7Ow2K18uFZJb8OYSYK6_WYZlx2PqX9NrapN5XtUkwNw=)
+    - Picture 1: [link](https://heit.hu/wp-content/uploads/2016/06/SZB1210-1024x631.jpg)
+    - Picture 2: [link](https://heit.hu/wp-content/uploads/2016/06/SZB1204-1024x673.jpg)
+    - Picture 3: [link](https://heit.hu/wp-content/uploads/2016/06/SZB1181-1024x684.jpg)
+    - Picture 4: [link](https://heit.hu/wp-content/uploads/2016/06/SZB1198-1024x669.jpg)
+    - Picture 5: [link](https://heit.hu/wp-content/uploads/2016/06/SZB1176-1024x644.jpg)
+    - Picture 6: [link](https://heit.hu/wp-content/uploads/2016/06/SZB1189-1024x691.jpg)
+    - Picture 7: [link](https://heit.hu/wp-content/uploads/2016/06/SZB1184-768x927.jpg)
