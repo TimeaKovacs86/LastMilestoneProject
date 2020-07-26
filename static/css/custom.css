@@ -82,6 +82,12 @@ form input {
 }
 
 
+/*Registration page*/
+
+.orange-text {
+    color: #f44336 !important;
+}
+
 /*Home page*/
 
 .welcome h2 {

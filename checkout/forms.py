@@ -6,8 +6,8 @@ from django.core.validators import RegexValidator
 class MakePaymentForm(forms.Form):
     credit_card_number = forms.IntegerField(label='Credit card number', required=False, max_value=9999999999999999)
     cvv = forms.IntegerField(label='Security code (CVV)', required=False, max_value=999)
-    expiry_month = forms.IntegerField(label='Month', required=False, min_value=1, max_value=12)
-    expiry_year = forms.IntegerField(label='Year', required=False, min_value=2020, max_value=2035)
+    expiry_month = forms.IntegerField(label='Month (MM)', required=False, min_value=1, max_value=12)
+    expiry_year = forms.IntegerField(label='Year (YYYY)', required=False, min_value=2020, max_value=2035)
     stripe_id = forms.CharField(widget=forms.HiddenInput)
 
     def clean(self):
